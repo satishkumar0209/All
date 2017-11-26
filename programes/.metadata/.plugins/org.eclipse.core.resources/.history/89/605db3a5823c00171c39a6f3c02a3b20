@@ -1,0 +1,85 @@
+package POM;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import Casesrun.Homepagetable;
+
+public class email { 
+	WebDriver driver;
+	
+
+
+	int count= 0;
+	List<WebElement>rows=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)"));
+	System.out.println("Total no of rows page1="+rows.size());	
+	List<WebElement>cols=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr[1]/td)"));
+	System.out.println("Total no of columns="+cols.size());
+	
+	JavascriptExecutor jse = (JavascriptExecutor)driver;
+	jse.executeScript("window.scrollBy(0,250)", "");
+	
+	int input=0;
+	int required=0;
+	boolean start= true;
+	do
+	{	
+		Homepagetable.arrowbutton(driver).click();
+		List<WebElement>rows8=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)"));
+		System.out.println("Total no of Rows="+rows8.size());
+		input= rows8.size();
+		
+		if (start)
+		{
+			required= rows8.size();
+			start= false;
+			//System.out.println("inside first time");
+		}
+			
+		List<WebElement>cols8=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr[1]/td)"));
+		System.out.println("Total no of columns="+cols8.size());
+		
+		//System.out.println("page-->"+(input)+required);
+		count += input;
+	}
+	while(input>=required);
+	System.out.println("Total Cases are-->"+count);
+	
+public email(WebDriver driver)
+{
+	PageFactory.initElements(driver, this);
+}
+
+List<WebElement>rows=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)"));
+System.out.println("Total no of rows page1="+rows.size());	
+List<WebElement>cols=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr[1]/td)"));
+System.out.println("Total no of columns="+cols.size());
+
+@FindBy(xpath="//div[@class='ui-g-12']/input")
+public WebElement email;
+
+@FindBy(xpath="//div[@class='ui-g-12']/input.div[4]")
+public WebElement password;
+
+@FindBy(xpath="html/body/app-root/div/home/div/div/div/app-login/div/div[2]/div[1]/div/form/div[5]/p-checkbox/div/div[2]")
+public WebElement button;
+
+public void validuser(String user)
+{
+	email.sendKeys("satishkumar@gmail.com");
+	password.sendKeys("satish");
+	button.click();		
+}
+public void invaliduser(String user2)
+{
+	email.sendKeys("kumar@gmail.com");
+	password.sendKeys("satish");
+	button.click();		
+}
+}

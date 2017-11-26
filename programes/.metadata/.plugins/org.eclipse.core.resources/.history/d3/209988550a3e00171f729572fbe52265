@@ -1,0 +1,15 @@
+<suite name="example suite 1" verbose="1" >
+
+<test name="Test" >
+ 
+<parameter name="browser" value="chrome" />
+    
+<classes>
+     
+<class name="Crossbro.one"/>
+     
+</classes>
+ 
+ </test>
+
+</suite>

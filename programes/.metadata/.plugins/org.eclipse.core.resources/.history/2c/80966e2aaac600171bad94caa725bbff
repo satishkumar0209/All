@@ -1,0 +1,37 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Register{
+	
+	public void sign(WebDriver driver) throws InterruptedException{
+		
+		//Username
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("hello");
+		//Email id
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("email@gmail.com");
+		//Name
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("satish");
+		//Mobile no
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("98857140961234");
+		//password
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("123456");
+		//retype password
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("123456");
+		//Bank name
+		driver.findElement(By.cssSelector(".//*[@id='myId']/app-root/div/div[4]/div/app-signup/div/div[2]/form/div/div[1]/div[2]/div[8]/p-dropdown/div/label")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.cssSelector(".//*[@id='myId']/app-root/div/div[4]/div/app-signup/div/div[2]/form/div/div[1]/div[2]/div[8]/p-dropdown/div/div[4]/div/ul/li[2]")).click();
+		
+		//Account name 
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("satish kumar");
+		//Account no
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("30572754113");
+		//Terms
+		driver.findElement(By.cssSelector(".ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default")).click();
+		//register
+		driver.findElement(By.cssSelector(".signup-button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only")).click();
+	}
+
+}

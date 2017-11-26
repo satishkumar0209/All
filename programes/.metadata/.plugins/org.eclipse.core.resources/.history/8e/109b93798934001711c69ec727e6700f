@@ -1,0 +1,44 @@
+package Logintestcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import POM.Homepage;
+
+public class validuser {
+
+	private static WebDriver driver;
+	
+	
+	@BeforeTest
+	public void browser()
+	{
+		System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+	}
+
+	@Test
+	public void user()
+	{
+		Homepage.username(driver).sendKeys("superadmin@gmail.com");
+		System.out.println("Enter username successfully");
+		
+		Homepage.password(driver).sendKeys("password123");
+		System.out.println("Enter password successfully");
+		
+		
+		Homepage.login(driver).click();
+		System.out.println("click login button successfully");
+		
+	}
+	
+	public void closebrowser()
+	{
+	driver.quit();	
+	}
+	}
+
+

@@ -1,0 +1,34 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Register{
+	
+	public void sign(WebDriver driver){
+		
+		//Username
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("hello");
+		//Email id
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("email@gmail.com");
+		//Name
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("satish");
+		//Mobile no
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid"));
+		//password
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid"));
+		//retype password
+		driver.findElement(By.cssSelector(""));
+		//Bank name
+		driver.findElement(By.cssSelector(""));
+		//Account name 
+		driver.findElement(By.cssSelector(""));
+		//Account no
+		driver.findElement(By.cssSelector(""));
+		//Terms
+		driver.findElement(By.cssSelector(""));
+		//register
+		driver.findElement(By.cssSelector(""));
+	}
+
+}

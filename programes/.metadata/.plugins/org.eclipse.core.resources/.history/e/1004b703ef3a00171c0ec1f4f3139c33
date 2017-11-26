@@ -1,0 +1,38 @@
+package Loginrun;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import com.jayway.restassured.response.*;
+
+import atu.testrecorder.ATUTestRecorder;
+import atu.testrecorder.exceptions.ATUTestRecorderException;
+
+
+
+
+
+public static void main(String args[]) {
+    //new HttpResponseCode().checkHttpResponseCode("http://www.google.com");
+}
+
+/*public class Responsecode 
+{
+	 
+	public void checkHttpResponseCode(String url) {
+		 Response response = get("/lotto");
+    //Response response = get("http://designco.sia.co.in/dashboard");
+           
+                   
+
+    System.out.println(response.getStatusCode());
+}
+
+}*/

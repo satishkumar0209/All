@@ -1,0 +1,37 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Quick {
+	
+	public void quicks(WebDriver driver) throws InterruptedException{
+		Thread.sleep(3000);
+		driver.get("http://lottery1.sia.co.in/#/profile/4d-3d-2d/quick-2d");
+		Thread.sleep(3000);
+		//big
+		driver.findElement(By.xpath("(//*[@type='radio'])[1]")).click();
+		//Small
+		//driver.findElement(By.xpath("(//*[@name='groupname'])[2]")).click();
+		//Odd
+		//driver.findElement(By.xpath("(//*[@name='groupname'])[3]")).click();
+		//Even
+		//driver.findElement(By.xpath("(//*[@name='groupname'])[4]")).click();
+		//Amount
+		driver.findElement(By.xpath("//*[@formcontrolname='amount']")).sendKeys("1");
+		//submit
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[20]")).click();
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		WebElement element=driver.findElement(By.xpath(""));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[21]")).click();
+		
+		
+		
+		
+		
+	}
+
+}

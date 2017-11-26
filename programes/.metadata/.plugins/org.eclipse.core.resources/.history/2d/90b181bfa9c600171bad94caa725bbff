@@ -1,0 +1,36 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Register{
+	
+	public void sign(WebDriver driver){
+		
+		//Username
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("hello");
+		//Email id
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("email@gmail.com");
+		//Name
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("satish");
+		//Mobile no
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("98857140961234");
+		//password
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("123456");
+		//retype password
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("123456");
+		//Bank name
+		driver.findElement(By.cssSelector(".ui-dropdown-label.ui-inputtext.ui-corner-all")).click();
+		driver.findElement(By.cssSelector(".ui-dropdown-item.ui-corner-all")).click();
+		
+		//Account name 
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("satish kumar");
+		//Account no
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("30572754113");
+		//Terms
+		driver.findElement(By.cssSelector(".ui-chkbox-box.ui-widget.ui-corner-all.ui-state-default")).click();
+		//register
+		driver.findElement(By.cssSelector(".signup-button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only")).click();
+	}
+
+}

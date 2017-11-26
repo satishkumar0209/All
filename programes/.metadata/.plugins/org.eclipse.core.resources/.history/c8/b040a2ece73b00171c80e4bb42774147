@@ -1,0 +1,61 @@
+package phantom;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import POM.Login;
+
+public class validuser 
+{
+	private WebDriver driver;
+	  private String baseUrl;
+	  private StringBuffer verificationErrors = new StringBuffer();
+	  protected static DesiredCapabilities dCaps;
+	 
+	  @BeforeTest
+	  public void setUp() throws Exception {
+		  
+		  dCaps = new DesiredCapabilities();
+		  
+		  dCaps.setJavascriptEnabled(true);
+		  dCaps.setCapability("takesScreenshot", false);
+		  
+		  driver = new PhantomJSDriver(dCaps);
+		  baseUrl = "http://designco.sia.co.in/";
+		 
+		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  }
+	 
+	  @Test
+	  public void getLinksOfAssertSelenium() throws Exception
+	  {
+		 
+	    driver.get(baseUrl + "/");	
+	    String emailmaxlength=driver.findElement(By.cssSelector("[placeholder='Username']")).getAttribute("maxlength");
+		System.out.println("username maximum length is:"+emailmaxlength);
+		
+		String passwordmaxlength=driver.findElement(By.cssSelector("[placeholder='Password']")).getAttribute("maxlength");
+		System.out.println("password maxlength is :"+passwordmaxlength);
+		
+//	    driver.findElement(By.cssSelector("[placeholder='Username']")).sendKeys("superadmin@gmail.com");
+//	    System.out.println("Enter username successfully");
+//	    driver.findElement(By.cssSelector("[placeholder='Password']")).sendKeys("password123");		  
+//	    System.out.println("Enter password successfully");
+//	    Thread.sleep(5000);
+//	    driver.findElement(By.id("btn")).click();
+//	    System.out.println("click login button successfully");
+//	  
+	    String url=driver.getCurrentUrl();
+	    System.out.println(url);
+
+	   
+		
+	    	
+	  }
+}

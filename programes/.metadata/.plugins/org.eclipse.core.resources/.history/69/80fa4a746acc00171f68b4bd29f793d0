@@ -1,0 +1,38 @@
+package Lottery;
+
+public class NewTest {
+	  
+
+	WebDriver driver;
+	String baseURL = "https://www.google.com/";
+
+	
+	String nodeURL = "http://192.168.1.10:5566/wd/hub";
+	
+
+	@BeforeTest
+	public void setup() throws MalformedURLException 
+	{
+        
+		
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		cap.setBrowserName("firefox");
+		cap.setPlatform(Platform.LINUX);
+		driver = new RemoteWebDriver(new URL(nodeURL),cap);
+		System.out.println("hello");
+	}
+	
+	@AfterTest
+	public void aftertest()
+	{
+		
+	}
+	@Test
+	public void SimpleTest()
+	{
+		driver.get(baseURL);
+	    String result = driver.getTitle();
+		System.out.println(result);
+	}
+}
+

@@ -1,0 +1,21 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Login {
+	
+	public void login(WebDriver driver) throws InterruptedException{
+		
+		driver.findElement(By.xpath("(//*[@formcontrolname='username'])[1]")).sendKeys("satish");
+		driver.findElement(By.xpath("(//*[@formcontrolname='password'])[1]")).sendKeys("123456");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+		Thread.sleep(5000);
+		 driver.findElement(By.cssSelector("#myModal > div > div.ui-g-12.fotter-row > button:nth-child(2)")).click();
+		driver.findElement(By.xpath("//*[@id='myModal']/div/div[3]/button[2]")).click();
+		//driver.findElement(By.xpath("//*[@ng-reflect-label='Agree']")).click();
+		
+		
+	}
+
+}

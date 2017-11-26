@@ -1,0 +1,77 @@
+package monb;
+
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class hello {
+public AppiumDriver driver ;
+	
+	
+	String AppPath = "/home/aj/Pictures/AppFile_Calculator/skype.apk";
+		
+	@Test
+	public void createAppiumInstance() throws InterruptedException 
+	{
+		try
+		{
+			//Set DesiredCapabilities
+			DesiredCapabilities caps = new DesiredCapabilities();
+			//device udid
+			//caps.setCapability("device ID", "45OBQWJBKNTOVCHA");
+			
+			
+			//device name
+			caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Redmi");	
+			//device version
+			caps.setCapability("version", "4.4.4");
+			//caps.setCapability("screen-resolution", "384x800");
+			caps.setCapability("app", AppPath);
+			caps.setCapability("newCommandTimeout", "8000");
+			
+			//Appium instance
+			System.out.println(driver == null);
+			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub/"),caps);
+			System.out.println(driver == null);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Appium session is not created" + e);
+		}
+	
+		Thread.sleep(4000);
+		WebElement element=driver.findElement(By.xpath("//android.widget.Button[@text='Simple']"));
+		element.getText();
+		
+		element.click();
+		
+//	WebElement element=	driver.findElement(By.id("app.kwc.math.totalcalc:id/date_calc_btn"));
+//	element.getText();
+//	System.out.println("text="+element);
+//	element.click();
+	
+	Thread.sleep(4000);
+	
+	//driver.findElement(By.id("app.kwc.math.totalcalc:id/num5btn")).click();
+	//driver.findElement(By.id("app.kwc.math.totalcalc:id/num4btn")).click();
+	
+		 
+	
+		
+	}
+}
+
+
+

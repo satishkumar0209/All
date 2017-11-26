@@ -1,0 +1,26 @@
+package http;
+
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.given;
+
+public class status {
+
+	public void checkHttpCode(String url) {
+		Response resp = given().get(url).then().extract().response();
+
+		// System.out.println("status code="+resp.getStatusCode());
+		int i = resp.getStatusCode();
+		if (i == 500) {
+			System.out.println("success");
+		} else {
+			System.out.println("Un_successful");
+		}
+	}
+
+	public static void main(String[] args) {
+
+		new status().checkHttpCode("http://google.com");
+
+	}
+
+}

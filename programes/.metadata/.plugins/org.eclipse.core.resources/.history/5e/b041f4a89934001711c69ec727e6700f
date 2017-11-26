@@ -1,0 +1,43 @@
+package Loginrun;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import POM.Homepage;
+import POM.Login;
+
+public class valid {
+private static WebDriver driver;
+	
+	
+	@Test
+	public void user() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://designco.sia.co.in/");
+		driver.manage().window().maximize();
+		
+		Login.username(driver).sendKeys("superadmin@gmail.com");
+		System.out.println("Enter username successfully");
+		
+		Login.password(driver).sendKeys("password123");
+		System.out.println("Enter password successfully");
+		
+		
+		Login.loginbutton(driver).click();
+		System.out.println("click login button successfully");
+		
+		Thread.sleep(9000);
+		String url=driver.getCurrentUrl();
+		System.out.println("browser current url :"+url);
+		
+		String pagetitle=driver.getTitle();
+		System.out.println("Current page title:"+pagetitle);
+		
+		Homepage.Logoutbutton(driver).click();
+
+	}
+}

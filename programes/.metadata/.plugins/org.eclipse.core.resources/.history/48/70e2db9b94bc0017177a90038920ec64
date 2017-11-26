@@ -1,0 +1,17 @@
+package http;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class extension {
+
+	public static void main(String[] args) {
+		System.out.println("Unsuccess");
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("chrome://extensions/");
+
+	}
+
+}

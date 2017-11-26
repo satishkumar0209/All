@@ -1,0 +1,104 @@
+package Login;
+
+import java.awt.AWTException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import name.LoginElements;
+
+public class crossbrowsing2 
+
+{
+
+	@Test
+	public void login() throws InterruptedException, AWTException
+	{
+
+	System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://myswaastherp.sia.co.in/#/login");
+	
+	driver.manage().window().maximize();
+	
+	LoginElements.EmailId(driver).sendKeys("automation@gmail.com");
+	
+	System.out.println("Enter user name successfully");
+	
+	LoginElements.Password(driver).sendKeys("123456");
+	System.out.println("Enter password successfully");
+	LoginElements.loginbutton(driver).click();
+	
+	System.out.println("Clicking on Signin button successfully");
+	Thread.sleep(5000);
+	
+	driver.get("https://myswaastherp.sia.co.in/#/home/profile");
+	
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+	
+
+	String original = driver.findElement(By.xpath("(.//*[@class='ui-progressbar-label'])[4]")).getText();
+	
+	String newString = original.replace("%","");
+	
+	int value3=Integer.parseInt(newString);
+	
+	if(value3 == 25)
+		System.out.println("True");
+	else
+		System.out.println("False");
+	
+	driver.findElement(By.xpath("(.//*[@class='ui-button-text ui-c'])[8]")).click();
+	
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+	driver.findElement(By.xpath(".//*[text()='EDUCATION & SPECIALIZATION']")).click();
+	
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+	driver.findElement(By.xpath("(.//*[@class='ui-inputtext ui-widget ui-state-default ui-corner-all'])[2]")).sendKeys("m");
+	
+	driver.findElement(By.xpath(".//*[text()='M.B.B.S (Bachelor of Medicine/Bachelor of Surgery)']")).click();
+	
+	driver.findElement(By.xpath(".//*[@formcontrolname='college']")).sendKeys("Amara");
+	
+	
+	driver.findElement(By.xpath(".//*[@class='ui-dropdown-label ui-inputtext ui-corner-all']")).click();
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+	
+	driver.findElement(By.xpath("(.//*[@class='ui-dropdown-item ui-corner-all'])[3]")).click();
+	
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	
+	driver.findElement(By.xpath(".//*[@label='+']")).click();
+	
+	driver.findElement(By.xpath("(.//*[@class='ui-inputtext ui-widget ui-state-default ui-corner-all'])[4]")).sendKeys("s");
+	
+	driver.findElement(By.xpath(".//*[text()='Somnologist']")).click();
+	
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	Thread.sleep(2000);
+	
+	driver.get("https://myswaastherp.sia.co.in/#/home/profile");
+	
+String original1 = driver.findElement(By.xpath("(.//*[@class='ui-progressbar-label'])[4]")).getText();
+driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	String newString1 = original.replace("%","");
+	
+	int value4=Integer.parseInt(newString1);
+	
+	if(value4 == 50)
+		System.out.println("percentage Equal");
+	else
+		System.out.println("False");
+	
+	
+}
+}

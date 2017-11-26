@@ -1,0 +1,28 @@
+package http;
+
+import java.io.File;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class extension {
+
+	public static void main(String[] args) {
+		WebDriver driver;
+		System.out.println("Unsuccess");
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+//		WebDriver driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.get("chrome://extensions/");
+//		
+		ChromeOptions chromeoption=new ChromeOptions();
+		
+		chromeoption.addExtensions(new File("/home/aj/Downloads/way2sms_v3.8.crx`"));
+		DesiredCapabilities desiredcapabilities=DesiredCapabilities.chrome();
+		desiredcapabilities.setCapability(chromeoption.CAPABILITY, chromeoption);
+		driver=new ChromeDriver(desiredcapabilities);
+	}
+
+}

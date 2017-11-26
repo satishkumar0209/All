@@ -1,0 +1,50 @@
+package samplep;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class helloworld {
+
+	public static void main(String[] args) throws InterruptedException, IOException {
+		WebDriver driver;
+		System.setProperty("webdriver.chrome.driver","/home/aj/Pictures/chromedriver");
+
+		
+		ChromeOptions options = new ChromeOptions();
+		
+		options.addArguments("window-size-4000,1000");
+		
+		options.addArguments("headless");
+	
+		driver = new ChromeDriver(options);
+
+		Thread.sleep(10000);
+		driver.get("http://yicuadmin.sia.co.in/login");
+		Thread.sleep(5000);
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		FileUtils.copyFile(scrFile, new File("/home/aj/Desktop/snap.png"));
+		
+		String url=driver.getCurrentUrl();
+		System.out.println(url);
+		System.out.println(driver.getTitle());
+		
+		
+		//checks one of the section is displayed
+		
+		if(driver.findElement(By.cssSelector("div.wrp-log")).isDisplayed()){
+			System.out.println("This succedded");
+		}else{
+			System.out.println("This failed");
+		}
+	}
+
+}

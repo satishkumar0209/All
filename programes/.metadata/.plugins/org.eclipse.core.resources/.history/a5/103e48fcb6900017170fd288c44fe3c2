@@ -1,0 +1,11 @@
+
+public class Stingreverse {
+
+	public static void main(String[] args) {
+		StringBuffer sdf=new StringBuffer("satish");
+		System.out.println(sdf.reverse());
+		
+
+	}
+
+}

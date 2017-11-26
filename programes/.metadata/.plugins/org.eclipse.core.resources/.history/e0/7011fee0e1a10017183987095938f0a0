@@ -1,0 +1,24 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class subdomain {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://kidsclinic.sia.co.in/");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[1]")).click();
+		Thread.sleep(2000);
+		//Book appointment
+		//driver.findElement(By.xpath("(//*[@class='doctor-name'])[1]")).click();
+		//View all Timings
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[2])")).click();
+
+	}
+
+}

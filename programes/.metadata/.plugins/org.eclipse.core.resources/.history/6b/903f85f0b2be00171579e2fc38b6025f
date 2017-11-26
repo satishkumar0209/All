@@ -1,0 +1,72 @@
+package http;
+
+import java.io.File;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class extension {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver;
+
+//		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+//		ChromeOptions chromeoption = new ChromeOptions();
+//		chromeoption.addExtensions(new File("/home/aj/Pictures/way2sms_v3.8.crx"));
+//		DesiredCapabilities desiredcapabilities = DesiredCapabilities.chrome();
+//		desiredcapabilities.setCapability(chromeoption.CAPABILITY, chromeoption);
+//		driver = new ChromeDriver(desiredcapabilities);
+//		driver.manage().window().maximize();
+//		driver.get("http://site24.way2sms.com/content/index.html?");
+//		driver.findElement(By.id("username")).sendKeys("9014316925");
+//		driver.findElement(By.id("password")).sendKeys("9014316925");
+//		driver.findElement(By.id("loginBTN")).click();
+//		Thread.sleep(5000);
+//		driver.findElement(By.id("sendSMS")).click();
+//		driver.switchTo().frame("frame");
+//		driver.findElement(By.xpath("//*[@id='mobile']")).sendKeys("9717111858");
+//		driver.findElement(By.id("message")).sendKeys("hello");
+//		driver.findElement(By.id("Send")).click();
+		ChromeDriver wd;
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+        wd = new ChromeDriver();
+        wd.manage().window().maximize();
+        wd.get("http://m.lottery1.sia.co.in/");
+        wd.findElement(By.cssSelector("input.text-input.text-input-md")).click();
+        wd.findElement(By.cssSelector("input.text-input.text-input-md")).clear();
+        wd.findElement(By.cssSelector("input.text-input.text-input-md")).sendKeys("gsatishkumar0209@gmail.com");
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input/input")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input/input")).clear();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input/input")).sendKeys("123456");
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/button")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input/input")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input/input")).clear();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/ion-row[2]/ion-col[2]/ion-input/input")).sendKeys("143143");
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-home/ion-content/div[2]/div/form/ion-grid/button")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-welcome/ion-header/header/ion-content/div[2]/ion-navbar/button[2]")).click();
+        wd.findElement(By.xpath("//ion-menu[@id='authenticated']/div/ion-content/div[2]/ion-list/ion-grid/ion-row[2]/ion-col[2]")).click();
+        wd.findElement(By.cssSelector("input.text-input.text-input-md")).click();
+        wd.findElement(By.cssSelector("input.text-input.text-input-md")).clear();
+        wd.findElement(By.cssSelector("input.text-input.text-input-md")).sendKeys("143143");
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/ion-row[3]/ion-col/ion-item[1]/div[1]/div/ion-input/input")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/ion-row[3]/ion-col/ion-item[1]/div[1]/div/ion-input/input")).clear();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/ion-row[3]/ion-col/ion-item[1]/div[1]/div/ion-input/input")).sendKeys("123456");
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/ion-row[5]/ion-col/ion-item[1]/div[1]/div/ion-input/input")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/ion-row[5]/ion-col/ion-item[1]/div[1]/div/ion-input/input")).clear();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/ion-row[5]/ion-col/ion-item[1]/div[1]/div/ion-input/input")).sendKeys("123456");
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-content/div[2]/div/button")).click();
+        wd.findElement(By.xpath("//ion-app/ng-component/ion-nav/page-change-password/ion-header/header/ion-content/div[2]/ion-navbar/button[2]")).click();
+        wd.findElement(By.xpath("//ion-menu[@id='authenticated']/div/ion-content/div[2]/ion-list/ion-grid/ion-row[13]/ion-col[2]")).click();
+       
+	}
+    
+   
+
+	}
+

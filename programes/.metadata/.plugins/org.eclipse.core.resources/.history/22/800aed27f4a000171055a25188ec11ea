@@ -1,0 +1,24 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Login {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://apiv3.myswaasth.com/mahaflox");
+		driver.findElement(By.id("id_username")).sendKeys("admin@innotical.com");
+		driver.findElement(By.id("id_password")).sendKeys("admin_inno111");
+		driver.findElement(By.xpath("//*[@type='submit']")).click();
+		Thread.sleep(3000);
+		driver.get("https://apiv3.myswaasth.com/mahaflox/authentication/account/");
+		driver.findElement(By.id("searchbar")).sendKeys("ms@gmail.com");
+		driver.findElement(By.xpath("//*[@type='submit']")).click();
+
+	}
+
+}

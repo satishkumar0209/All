@@ -1,0 +1,31 @@
+package name;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+
+
+
+public class Loginrun 
+{
+	public static WebDriver driver;
+@Test
+public void login()
+{
+	System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://myswaastherp.sia.co.in/#/login");
+	
+	driver.manage().window().maximize();
+	
+	LoginElements.EmailId(driver).sendKeys("satishkumar@innotical.com");
+	
+	LoginElements.Password(driver).sendKeys("123456");
+	
+	LoginElements.loginbutton(driver).click();
+	
+	
+	
+}
+}

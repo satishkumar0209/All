@@ -1,0 +1,26 @@
+package Run;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import ERP.Helpher;
+import ERP.signupElements;
+
+public class signup {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://myswaastherp.sia.co.in/signup");
+		
+		WebElement username=signupElements.username(driver);
+		Helpher.highLightElement(driver, username);
+		username.sendKeys("satish");
+		
+		
+
+	}
+
+}

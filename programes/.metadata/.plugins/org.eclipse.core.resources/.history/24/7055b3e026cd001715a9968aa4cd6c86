@@ -1,0 +1,100 @@
+package twoas;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import two.fourDSet;
+
+public class own {
+	  
+
+	WebDriver driver;
+	String baseURL = "http://lottery1.sia.co.in/";
+	String baseURL2 = "http://lottery1.sia.co.in/#/profile/4d-3d-2d/4d-set";
+	
+	String nodeURL = "http://192.168.1.22:5555/wd/hub";
+	
+	// http://192.168.1.43:5555
+	@BeforeTest
+	public void setup() throws MalformedURLException, InterruptedException 
+	{
+        
+		
+
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		 ;
+		cap.setBrowserName("firefox");
+		cap.setPlatform(Platform.LINUX);
+		driver = new RemoteWebDriver(new URL(nodeURL),cap);
+		System.out.println("hello");
+		driver.get(baseURL);
+		driver.findElement(By.xpath("(//*[@formcontrolname='username'])[1]")).sendKeys("guruji");
+		driver.findElement(By.xpath("(//*[@formcontrolname='password'])[1]")).sendKeys("123456");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+		Thread.sleep(5000);
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+
+		WebElement element = driver.findElement(By.xpath("//*[@id='myModal']/div/div[3]/button[2]"));
+
+		je.executeScript("arguments[0].scrollIntoView(true);", element);
+		driver.findElement(By.cssSelector("#myModal > div > div.ui-g-12.fotter-row > button:nth-child(2)")).click();
+		Thread.sleep(5000);
+		System.out.println("4D game start");
+		driver.get(baseURL2);      
+//		driver.findElement(By.xpath("//*[@id='gameSection']/div/app-four-three-two-d/div/div[2]/div[1]/p[2]/span[1]")).click();
+		Thread.sleep(9000);
+		driver.findElement(By.xpath("//*[@formcontrolname='bet']")).sendKeys("2345");
+		driver.findElement(By.xpath("//*[@formcontrolname='amount']")).sendKeys("1");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[20]")).click();
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[20]")).click();
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		WebElement element1=driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[21]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element1);
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[21]")).click();
+		
+		
+	}
+	
+	@AfterTest
+	public void aftertest()
+	{
+		
+	}
+	@Test
+	public void SimpleTest() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Pictures/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		// wd.manage().window().maximize();
+		driver.get(baseURL);
+		driver.findElement(By.xpath("(//*[@formcontrolname='username'])[1]")).sendKeys("priyanka");
+		driver.findElement(By.xpath("(//*[@formcontrolname='password'])[1]")).sendKeys("123456");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+		Thread.sleep(5000);
+
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+
+		WebElement element = driver.findElement(By.xpath("//*[@id='myModal']/div/div[3]/button[2]"));
+
+		je.executeScript("arguments[0].scrollIntoView(true);", element);
+		driver.findElement(By.cssSelector("#myModal > div > div.ui-g-12.fotter-row > button:nth-child(2)")).click();
+		Thread.sleep(5000);
+
+		
+	        
+	}
+}
+

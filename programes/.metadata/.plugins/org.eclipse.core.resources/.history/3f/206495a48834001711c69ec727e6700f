@@ -1,0 +1,32 @@
+package Logintestcases;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import POM.Homepage;
+
+public class validuser {
+
+	private static WebDriver driver;
+	
+	
+	@BeforeTest
+	public void browser()
+	{
+		
+	}
+
+	@Test
+	public void user()
+	{
+		Homepage.username(driver).sendKeys("");
+		}
+	
+	public void closebrowser()
+	{
+		
+	}
+	}
+
+

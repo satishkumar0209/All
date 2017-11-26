@@ -1,0 +1,30 @@
+package lepark;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class login {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://lepark.sia.co.in/");
+		
+		driver.findElement(By.xpath("//*[@class='ant-select-search__field']")).sendKeys("a");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[text()='baby']")).click();
+		driver.findElement(By.xpath("(//*[@class='ant-select-selection__rendered'])[3]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("(//*[@class='ant-select-dropdown-menu-item'])[3]")).click();
+		driver.findElement(By.xpath("(//*[@class='ant-select-selection__rendered'])[4]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@class='ant-select-dropdown-menu-item-active ant-select-dropdown-menu-item']")).click();
+		driver.findElement(By.name("Tableno")).sendKeys("4");
+		
+		
+
+	}
+
+}

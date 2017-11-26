@@ -1,0 +1,14 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Register{
+	
+	public void sign(WebDriver driver){
+		
+		
+		driver.findElement(By.cssSelector(".signup-input.ng-untouched.ng-pristine.ng-invalid")).sendKeys("hello");
+	}
+
+}

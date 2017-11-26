@@ -1,0 +1,51 @@
+package pendingcases;
+
+public class Snippet {
+	
+				pageelement.searchbyname(driver).sendKeys("Nikhil");
+				List<WebElement>rows=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)"));
+				System.out.println("Total no of rows="+rows.size());
+				
+				List<WebElement>cols=driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr[1]/td)"));
+				System.out.println("Total no of columns="+cols.size());
+				
+				
+				for (int r=1;r<=rows.size();r++)
+				{
+					for(int c=1;c<=cols.size();c++)
+	
+				{
+				try
+				{
+					Thread.sleep(4000);
+					driver.findElement(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)["+r+"]/td["+c+"]/span"));
+				System.out.println(driver.findElement(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)["+r+"]/td["+c+"]/span")).getText()+"");
+				}
+				catch(Exception e)
+				{
+					
+				}
+					Thread.sleep(3000);
+					System.out.println("\n");
+				}
+				}
+	
+				JavascriptExecutor jse = (JavascriptExecutor)driver;
+				jse.executeScript("window.scrollBy(0,250)", "");
+			
+				
+				WebElement arrow=driver.findElement(By.xpath("(//span[@class='fa fa-forward'])"));
+				
+				if(arrow.isSelected())
+				{
+					
+					System.out.println("Arrow button is  Enable");
+					driver.findElement(By.xpath("(//span[@class='fa fa-forward'])")).click();
+				}
+				else
+				{
+					System.out.println("Arrow button is disable");
+				}
+	//driver.quit();
+}
+

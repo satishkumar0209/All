@@ -1,0 +1,27 @@
+package demo22;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class class1 {
+
+	public static void main(String[] args) throws InterruptedException 
+	
+	{
+	System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+	
+	WebDriver driver=new ChromeDriver();
+	
+	driver.get("https://www.facebook.com/");
+	Thread.sleep(9000);
+	Select dropdown=new Select(driver.findElement(By.name("birthday_day")));
+	dropdown.selectByValue("7");
+	
+
+	}
+
+}

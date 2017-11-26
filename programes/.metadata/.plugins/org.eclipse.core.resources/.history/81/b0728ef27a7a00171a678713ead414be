@@ -1,0 +1,35 @@
+package Browserfactory;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Browsers 
+
+{
+
+	static WebDriver driver;
+	
+	public static WebDriver Startbrowser(String name,String url)
+
+	{
+		
+		if(name.equals("Firefox"))
+		{
+			driver=new FirefoxDriver();
+		}
+		else if(name.equals("chrome"))
+		{
+			System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+			driver=new ChromeDriver();
+			
+		}
+		driver.manage().window().maximize();
+		driver.get(url);
+		return driver;
+		
+	}
+	
+
+	
+}

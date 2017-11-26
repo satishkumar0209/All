@@ -1,0 +1,35 @@
+package POM;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Homepage {
+public static WebElement element;
+	
+	public static WebElement Logoutbutton(WebDriver driver)
+
+	{
+		return driver.findElement(By.cssSelector("#logout"));
+		
+		
+	}
+	public static WebElement cases(WebDriver driver)
+
+	{
+		return driver.findElement(By.xpath("//*[text()='Cases']"));
+		
+		
+	}
+
+	
+	public static WebElement pendingcases(WebDriver driver)
+
+	{
+		return driver.findElement(By.cssSelector("body > app-root > app-navbar > div.wrapper > div > div.right-wrap.zeropad.ui-g-11.ui-lg-11.ui-md-11.ui-sm-8 > main > app-cases > app-cases-list > div > div.ui-g-12.card-div > div.ui-g.tabbtndiv > div > button:nth-child(2) > span"));
+		
+		
+	}
+
+
+}

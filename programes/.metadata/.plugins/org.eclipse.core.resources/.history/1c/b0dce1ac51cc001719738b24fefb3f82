@@ -1,0 +1,30 @@
+package Lottery;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class madhu {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Pictures/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		//wd.manage().window().maximize();
+		 driver.get("https://tigerair.com.au/");
+		 Thread.sleep(4000);
+		 driver.findElement(By.xpath("//*[@id='search-form']/div[1]/div[3]/button")).click();
+		 Select se = new Select(driver.findElement(By.xpath("//*[@id='search-form']/div[2]/div[1]/div[3]/div/div[3]/div[2]/button")));
+
+		 List<WebElement> l = se.getOptions();
+		 l.size();
+		 
+		 System.out.println("count="+ l);
+	
+
+	}
+
+}

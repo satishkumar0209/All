@@ -1,0 +1,49 @@
+package Lottery;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.Test;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+public class NewTest {
+	  
+
+	WebDriver driver;
+	String baseURL = "https://www.google.com/";
+
+	
+	String nodeURL = "http://192.168.1.10:5566/wd/hub";
+	
+
+	@BeforeTest
+	public void setup() throws MalformedURLException 
+	{
+        
+		
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		cap.setBrowserName("firefox");
+		cap.setPlatform(Platform.LINUX);
+		driver = new RemoteWebDriver(new URL(nodeURL),cap);
+		System.out.println("hello");
+	}
+	
+	@AfterTest
+	public void aftertest()
+	{
+		
+	}
+	@Test
+	public void SimpleTest()
+	{
+		driver.get(baseURL);
+	    String result = driver.getTitle();
+		System.out.println(result);
+	}
+}
+

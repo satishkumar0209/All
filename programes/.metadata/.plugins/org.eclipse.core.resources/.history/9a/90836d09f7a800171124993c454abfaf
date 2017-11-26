@@ -1,0 +1,25 @@
+package old;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class newtab {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("http://lottery1.sia.co.in/#/");
+		
+		driver.findElement(By.xpath("//*[@formcontrolname='username']")).sendKeys("gsatishkumar0209@gmail.com");
+		driver.findElement(By.xpath("//*[@formcontrolname='password']")).sendKeys("123456");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+	//	driver.get("https://facebook.sia.co.in/");
+		
+
+	}
+
+}

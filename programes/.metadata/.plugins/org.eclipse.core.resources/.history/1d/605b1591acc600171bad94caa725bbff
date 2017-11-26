@@ -1,0 +1,22 @@
+package Lottery;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Signup {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Pictures/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://lottery1.sia.co.in/#/signup");
+		
+		
+		Register s=new Register();
+		s.sign(driver);
+		Login Log=new Login();
+		Log.login(driver);
+
+	}
+
+}

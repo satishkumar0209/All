@@ -1,0 +1,8 @@
+package pendingcases;
+
+public class Snippet {
+	public static void main(String[] args) {
+		Homepagetable.CHECKBOX(driver).click();
+	}
+}
+

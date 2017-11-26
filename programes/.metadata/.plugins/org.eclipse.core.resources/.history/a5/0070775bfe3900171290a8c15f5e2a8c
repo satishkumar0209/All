@@ -1,0 +1,15 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Homepage2 {
+	
+	public static WebElement element;
+	
+	public static WebElement tablerow(WebDriver driver)
+	{
+		driver.findElements(By.xpath("(//tbody[@class='ui-datatable-data ui-widget-content']/tr)"));
+		return element;
+	}
+
+}

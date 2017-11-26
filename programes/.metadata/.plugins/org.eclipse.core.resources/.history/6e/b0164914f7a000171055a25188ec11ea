@@ -1,0 +1,40 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Login {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://apiv3.myswaasth.com/mahaflox");
+		driver.findElement(By.id("id_username")).sendKeys("admin@innotical.com");
+		driver.findElement(By.id("id_password")).sendKeys("admin_inno111");
+		driver.findElement(By.xpath("//*[@type='submit']")).click();
+		Thread.sleep(3000);
+		driver.get("https://apiv3.myswaasth.com/mahaflox/authentication/account/");
+		driver.findElement(By.id("searchbar")).sendKeys("ms@gmail.com");
+		driver.findElement(By.xpath("//*[@type='submit']")).click();
+		driver.findElement(By.cssSelector("#result_list > tbody > tr > th > a")).click();
+		
+		driver.findElement(By.id("id_random")).sendKeys(Keys.chord(Keys.CONTROL,"a"),Keys.chord(Keys.CONTROL,"c"));
+		
+	
+
+		
+		
+		driver.get("https://clinic.myswaasth.com/login");
+		driver.findElement(By.id("username")).sendKeys("ms@gmail.com");
+		driver.findElement(By.xpath("//*[@type='password']")).sendKeys("123456");
+		driver.findElement(By.xpath("//*[@label='SIGN IN']")).click();
+		
+		//driver.findElement(By.xpath("//*[@class='input ng-pristine ng-valid ui-inputtext ui-corner-all ui-state-default ui-widget ng-touched']")).sendKeys(Keys.chord(Keys.CONTROL,"v"),"");
+		driver.findElement(By.xpath("//*[@label='VERIFY']")).click();
+
+	}
+
+}

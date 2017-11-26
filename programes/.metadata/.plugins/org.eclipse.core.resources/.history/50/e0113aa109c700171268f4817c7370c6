@@ -1,0 +1,56 @@
+package Lottery;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class lotteryapp {
+
+	public AppiumDriver driver = null;
+	
+	String AppPath = "/home/aj/Pictures/changes.apk";
+		
+	@Test
+	public void createAppiumInstance() throws MalformedURLException, InterruptedException 
+	{
+		
+			//Set DesiredCapabilities
+			DesiredCapabilities caps = new DesiredCapabilities();
+			//device udid
+			caps.setCapability("device ID", "SM-G920L");
+			//device name
+			caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy S6");	
+			//device version
+			caps.setCapability("version", "7.0");
+			caps.setCapability("app", AppPath);
+			caps.setCapability("newCommandTimeout", "1500");
+			//Appium instancey
+			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub/"),caps);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			
+		Thread.sleep(5000);
+		//driver.findElement(By.name("JOIN ")).click();
+//		driver.findElementByName("JOIN ").click();
+	WebElement ele=driver.findElement(MobileBy.xpath("@class='android.widget.Button' and @index='0']"))	;
+	ele.click();
+	
+		//driver.findElementByXPath("android.widget.EditText[@index='0']").sendKeys("satish");
+		//driver.findElement(By.xpath("android.widget.EditText[@index='0']")).sendKeys("satish");
+		
+	}
+}
+
+
+

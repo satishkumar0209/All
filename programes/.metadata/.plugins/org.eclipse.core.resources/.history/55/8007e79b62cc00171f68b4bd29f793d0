@@ -1,0 +1,21 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class quickbet {
+	
+	
+	public void qbet(WebDriver driver){
+		driver.findElement(By.xpath("//*[@class='activeFont']")).click();
+		driver.findElement(By.xpath("//*[@formcontrolname='bet']")).sendKeys("2345");
+		driver.findElement(By.xpath("//*[@formcontrolname='amount']")).sendKeys("1");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[20]")).click();
+		driver.findElement(By.xpath("(//*[@class='green-button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only'])[2]")).click();		
+		driver.findElement(By.xpath("")).click();
+	}
+	
+	
+	
+
+}

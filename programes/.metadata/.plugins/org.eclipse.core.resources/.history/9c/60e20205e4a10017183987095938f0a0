@@ -1,0 +1,38 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class subdomain {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://kidsclinic.sia.co.in/");
+		//driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[1]")).click();
+		Thread.sleep(2000);
+		//Book appointment
+		//driver.findElement(By.xpath("(//*[@class='doctor-name'])[1]")).click();
+		//View all Timings
+//		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//		jse.executeScript("window.scrollBy(0,250)", "");
+//		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[2]")).click();
+
+//		JavascriptExecutor jse = (JavascriptExecutor)driver;
+//	jse.executeScript("window.scrollBy(0,450)", "");
+	driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[3]")).click();
+	Thread.sleep(2000);
+		String element=driver.findElement(By.xpath("//*[@class='doctor-name']")).getText();
+		System.out.println(element);
+		
+		if(element=="Dr.Vishu")
+		{
+			System.out.println("matching");
+		}
+	}
+
+}

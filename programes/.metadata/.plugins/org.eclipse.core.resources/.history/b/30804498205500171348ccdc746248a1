@@ -1,0 +1,22 @@
+package selenium;
+
+import java.awt.Dimension;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class threepointfour {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://restaurants.sia.co.in/#/bar-la-pinta");
+		
+		driver.manage().window().maximize();
+		
+		org.openqa.selenium.Dimension dm1 = driver.manage().window().getSize();			
+		System.out.println(dm1);
+
+	}
+
+}

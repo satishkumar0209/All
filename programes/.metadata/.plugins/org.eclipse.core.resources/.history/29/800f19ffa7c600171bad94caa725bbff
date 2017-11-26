@@ -1,0 +1,14 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Register{
+	
+	public void sign(WebDriver driver){
+		
+		
+		driver.findElement(By.xpath("//*[@id='myId']/app-root/div/div[4]/div/app-signup/div/div[2]/form/div/div[1]/div[2]/div[1]/input")).sendKeys("hello");
+	}
+
+}

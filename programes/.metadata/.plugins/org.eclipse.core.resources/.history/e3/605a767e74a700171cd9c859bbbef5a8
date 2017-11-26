@@ -1,0 +1,22 @@
+package old;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class newtab {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://welcome.sia.co.in/");
+		
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL+"t");
+		
+
+	}
+
+}

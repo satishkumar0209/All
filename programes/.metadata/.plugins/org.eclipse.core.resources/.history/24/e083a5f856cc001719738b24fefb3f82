@@ -1,0 +1,58 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import com.thoughtworks.selenium.webdriven.commands.Click;
+
+public class Signup {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Pictures/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		//wd.manage().window().maximize();
+		 driver.get("http://lottery1.sia.co.in/");
+		 driver.findElement(By.xpath("(//*[@formcontrolname='username'])[1]")).sendKeys("priyanka");
+			driver.findElement(By.xpath("(//*[@formcontrolname='password'])[1]")).sendKeys("123456");
+			driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+			Thread.sleep(5000);
+			
+			JavascriptExecutor je = (JavascriptExecutor) driver;
+			//Identify the WebElement which will appear after scrolling down
+			WebElement element = driver.findElement(By.xpath("//*[@id='myModal']/div/div[3]/button[2]"));
+			// now execute query which actually will scroll until that element is not appeared on page.
+			je.executeScript("arguments[0].scrollIntoView(true);",element);
+			// driver.findElement(By.cssSelector("#myModal > div > div.ui-g-12.fotter-row > button:nth-child(2)")).click();
+			driver.findElement(By.xpath("//*[@id='myModal']/div/div[3]/button[2]")).click();
+			Thread.sleep(3000);
+	        driver.findElement(By.xpath("//*[@id='myId']/app-root/div/div[2]/div/div/div/ul/li[5]")).click();        
+	       
+	        Thread.sleep(3000);
+	        driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[6]")).click();
+	        
+	        Thread.sleep(5000);
+	        driver.findElement(By.id("betcheckbox0")).click();
+	        Thread.sleep(5000);
+	        driver.findElement(By.id("w0")).sendKeys("5");
+	        driver.findElement(By.id("x0")).sendKeys("2");
+	        driver.findElement(By.id("y0")).sendKeys("3");
+	        driver.findElement(By.id("z0")).sendKeys("6");
+	        driver.findElement(By.id("betTextBox0")).sendKeys("1000");
+	        WebElement ss=driver.findElement(By.xpath("//*[@class='ui-g-6']"));
+	        ss.getText();
+	        System.out.println(ss);
+	        
+	        driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[21]")).click();
+	        
+	        
+	        
+	        
+	        
+	        
+	}
+
+}

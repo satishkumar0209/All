@@ -1,0 +1,30 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
+public class quickbet {
+	
+	
+	public void qbet(WebDriver driver) throws InterruptedException{
+		
+        Thread.sleep(5000);
+        driver.get("http://lottery1.sia.co.in/#/profile/4d-3d-2d/quick-bet");      
+//		driver.findElement(By.xpath("//*[@id='gameSection']/div/app-four-three-two-d/div/div[2]/div[1]/p[2]/span[1]")).click();
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@formcontrolname='bet']")).sendKeys("2345");
+
+		driver.findElement(By.xpath("//*[@formcontrolname='amount']")).sendKeys("1");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[20]")).click();
+	
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,550)", "");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[21]")).click();		
+		
+	}
+	
+	
+	
+
+}

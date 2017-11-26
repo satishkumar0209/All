@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="31596" started-at="2017-09-09T11:56:33Z" finished-at="2017-09-09T11:57:05Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="31596" started-at="2017-09-09T11:56:33Z" finished-at="2017-09-09T11:57:05Z">
+      <class name="Agro.Login">
+        <test-method status="PASS" signature="login()[pri:0, instance:Agro.Login@68f7aae2]" name="login" duration-ms="31504" started-at="2017-09-09T17:26:33Z" finished-at="2017-09-09T17:27:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+      </class> <!-- Agro.Login -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

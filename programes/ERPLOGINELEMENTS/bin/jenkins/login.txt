@@ -1,0 +1,36 @@
+1)Create 1 clinic where you have only admin as doc:(Satish clinic)
+
+Login details
+
+Email				:peloteando@gmail.com	
+password			:123456
+
+
+
+New clinic with different email where there are 1 admin (doc)+2 more docs
+
+clicnic details:Rahul clinic
+
+Login details
+
+Email			:yrahul@yahoo.com
+pass 			:123456
+
+
+
+Doctor 1:
+
+Name:Ak
+
+Email			:testengg1807@gmail.com
+
+Email password		:test1807
+ 
+
+Doctor 2:
+
+Name			:Neha
+
+Email			:testingmyswaasth@gmail.com
+
+Email password		:testingmyswaasth1

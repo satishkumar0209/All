@@ -1,0 +1,45 @@
+package selenium;
+
+import java.awt.Dimension;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
+
+public class threepointfour {
+
+	
+	
+			
+			
+			public static String baseURL = "https://myswaastherp.sia.co.in/#/";
+			
+			public static void main(String[] args) throws InterruptedException {
+				
+				System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+				WebDriver driver=new ChromeDriver();
+				//driver.manage().window().maximize();
+				
+				
+			
+				
+				driver.get(baseURL);
+				
+				Dimension dimension=new Dimension(1024,700);
+				driver.manage().window().getSize();
+				
+				
+				driver.findElement(By.xpath(".//*[text()='Login']")).click();
+				
+				System.out.println("Please wait for some time");
+				
+				Thread.sleep(5000);
+				
+				driver.quit();
+	}
+
+}

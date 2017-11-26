@@ -1,0 +1,75 @@
+package Run;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import ERP.Addprocedure;
+import ERP.Addstaff;
+import ERP.Helpher;
+import ERP.LOGin;
+import ERP.SetClinictimings;
+
+public class validuser {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://myswaastherp.sia.co.in/login");
+		String email="final@gmail.co.in";
+		
+		WebElement emailname=LOGin.emailid(driver);
+		Helpher.highLightElement(driver, emailname);
+		emailname.sendKeys(email);
+		
+		
+		WebElement password=LOGin.password(driver);
+		Helpher.highLightElement(driver, password);
+		password.sendKeys("123456");
+		
+		WebElement login=LOGin.login(driver);
+		Helpher.highLightElement(driver, login);
+		login.click();
+		
+//		WebDriverWait wait = new WebDriverWait(driver, 30);
+//		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@label='NEXT']")));
+//		 
+//		WebElement next=SetClinictimings.next(driver);
+//		Helpher.highLightElement(driver, next);
+//		next.click();
+
+//		WebDriverWait wait = new WebDriverWait(driver, 30);
+//		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@formcontrolname='owner_reg']")));
+//		 
+//		WebElement checkboxadmin=Addstaff.checkboxadmin(driver);
+//		Helpher.highLightElement(driver, checkboxadmin);
+//		checkboxadmin.click();
+//		
+//		WebElement registeradmin=Addstaff.adminregistrationnumber(driver);
+//		Helpher.highLightElement(driver, registeradmin);
+//		registeradmin.sendKeys("9963657475");
+//		
+//		WebElement nextbutton=Addstaff.nextbutton(driver);
+//		Helpher.highLightElement(driver, nextbutton);
+//		nextbutton.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@class='ui-button-text ui-clickable'])[2]")));
+		 
+		WebElement Service=Addprocedure.sampleservice(driver);
+		Helpher.highLightElement(driver, Service);
+		Service.sendKeys("den");
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//*[text()='Dental Bonding']")).click();
+		
+		
+
+	}
+
+}

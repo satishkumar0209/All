@@ -1,0 +1,28 @@
+package Loginrun;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import POM.Login;
+
+public class valid {
+private static WebDriver driver;
+	@BeforeTest
+	public void browseropen()
+	{
+		
+		System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://designco.sia.co.in/");
+		
+
+	}
+	
+	@Test
+	public void user()
+	{
+		Login.username(driver).sendKeys("satish@gmail.com");
+	}
+}

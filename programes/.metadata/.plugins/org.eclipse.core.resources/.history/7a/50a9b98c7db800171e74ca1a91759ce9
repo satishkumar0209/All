@@ -1,0 +1,48 @@
+package twilio;
+
+import java.util.HashMap;
+
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.sdk.TwilioRestClient;
+import com.twilio.sdk.TwilioRestException;
+import com.twilio.sdk.resource.factory.SmsFactory;
+import com.twilio.sdk.resource.instance.Account;
+import com.twilio.type.PhoneNumber;
+
+
+public class ddfd {
+public static final String ACCOUNT_SID = " ACf37201ba955c6fa6a33675da06875a2f";
+ public static final String AUTH_TOKEN = "560d7fdd3b0f8cbb12a13440b41596a4";
+
+	public static void main(String[] args) throws TwilioRestException{
+		Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+
+        Message message = Message.creator(new PhoneNumber("+14133543565"), // to
+                     new PhoneNumber("8860734935"), // from
+                     "Where's Wallace?")
+            .create();
+
+        System.out.println(message.getSid());
+		
+		
+//		TwilioRestClient client=new TwilioRestClient(System.getenv("ACf37201ba955c6fa6a33675da06875a2f"),System.getenv("560d7fdd3b0f8cbb12a13440b41596a4"));
+//		
+//		Account account=client.getAccount();
+//		
+//		SmsFactory factory=account.getSmsFactory();
+//		
+//		
+//		HashMap<String,String >message=new HashMap<>();
+//		
+//		message.put("To","+14133543565");
+//		message.put("From", "8591771290");
+//		message.put("Body", "happy bday");
+//		
+//		
+//		
+//		factory.create(message);
+		
+		}
+
+}

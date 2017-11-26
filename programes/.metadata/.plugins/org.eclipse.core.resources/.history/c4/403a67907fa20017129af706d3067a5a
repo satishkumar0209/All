@@ -1,0 +1,23 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ONEDOCTOR {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://kidsclinic.sia.co.in/");
+		//First book appointment
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[1]")).click();
+		//Pop-up book appointment
+		driver.findElement(By.xpath("(//*[@class='doctor-name'])[1]")).click();
+		//Doctor book appointment
+driver.findElement(By.xpath("//*[@label='BOOK APPOINTMENT']")).click();
+	}
+
+}

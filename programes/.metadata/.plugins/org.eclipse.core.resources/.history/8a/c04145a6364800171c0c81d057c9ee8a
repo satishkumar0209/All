@@ -1,0 +1,81 @@
+package name;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+
+
+
+public class Loginrun 
+{
+	public static WebDriver driver;
+@Test
+public void login() throws InterruptedException, AWTException
+{
+Robot robot=new Robot();
+
+	System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+	WebDriver driver=new ChromeDriver();
+	driver.get("https://myswaastherp.sia.co.in/#/login");
+	
+	driver.manage().window().maximize();
+	
+	LoginElements.EmailId(driver).sendKeys("satishkumar@innotical.com");
+	
+	LoginElements.Password(driver).sendKeys("123456");
+	
+	LoginElements.loginbutton(driver).click();
+	Thread.sleep(3000);
+	driver.get("https://myswaastherp.sia.co.in/#/home/profile/c/my-clinic/document-certificates");
+	Thread.sleep(3000);
+	driver.findElement(By.id("image1_container")).click();
+	Thread.sleep(3000);
+	
+	
+	/*robot.keyPress(KeyEvent.VK_TAB);
+	robot.keyRelease(KeyEvent.VK_TAB);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	robot.keyRelease(KeyEvent.VK_DOWN);
+	robot.keyPress(KeyEvent.VK_DOWN);
+	robot.keyRelease(KeyEvent.VK_DOWN);
+	
+
+
+	robot.keyPress(KeyEvent.VK_ENTER);
+	robot.keyRelease(KeyEvent.VK_ENTER);*/
+	
+
+	
+	
+	
+	
+	Thread.sleep(10000);
+	
+	/*driver.findElement(By.id("image2_container")).click();
+	Thread.sleep(3000);
+	
+	driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+	
+	Editprofile.profilecompletepercentage(driver).click();
+	
+	driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
+	
+	ClinicDetails.Documentsandcertificates(driver).click();
+	
+	
+*/	
+	
+	
+	
+	
+}
+}

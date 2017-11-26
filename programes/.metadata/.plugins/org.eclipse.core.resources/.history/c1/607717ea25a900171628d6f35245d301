@@ -1,0 +1,74 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class newtab {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Downloads/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("http://lottery1.sia.co.in/#/");
+		
+		driver.findElement(By.xpath("//*[@formcontrolname='username']")).sendKeys("gsatishkumar0209@gmail.com");
+		driver.findElement(By.xpath("//*[@formcontrolname='password']")).sendKeys("123456");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+		Thread.sleep(2000);
+		
+	driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[2]")).click();
+	driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[3]")).click();
+	Thread.sleep(7000);
+	System.out.println("hai");
+	WebElement element=driver.findElement(By.xpath("(//*[@class='user-name'])"));
+	
+	element.getText();
+	
+	System.out.println(element);
+	
+//	driver.get("http://lottery1.sia.co.in/#/profile/gift-discount");
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[8]")).click();
+//	Thread.sleep(2000);
+//	
+//	
+//	String checkbox = "(//*[@class='ng-untouched ng-pristine ng-valid'])[";
+//	
+//	String actualcheckbox;
+//	
+//	for (int img = 1; img <= 1; img++) {
+//	
+//		actualcheckbox = checkbox + img + "]";
+//		
+//		driver.findElement(By.xpath(actualcheckbox)).click();
+//		driver.findElement(By.xpath("//*[@class='ng-untouched ng-pristine ui-inputtext ui-corner-all ui-state-default ui-widget ng-valid']")).sendKeys("10");
+//
+//		
+//	}
+//
+//	
+//	
+//	
+//	driver.findElement(By.xpath("(//*[@class='ui-dropdown-label ui-inputtext ui-corner-all'])[2]")).click();
+//	Thread.sleep(2000);
+//	driver.findElement(By.xpath("(//*[@class='ui-dropdown-item ui-corner-all'])[1]")).click();
+//	driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[19]")).click();
+//		
+//	
+//	
+//	
+////	driver.findElement(By.xpath("(//*[@class='ui-dropdown-label ui-inputtext ui-corner-all'])[2]")).click();
+////	Thread.sleep(2000);
+////	driver.findElement(By.xpath("(//*[@class='ui-dropdown-item ui-corner-all'])[1]")).click();
+////	driver.findElement(By.xpath("//*[@class='ng-untouched ng-pristine ui-inputtext ui-corner-all ui-state-default ui-widget ng-valid']")).sendKeys("10");
+////	
+
+	
+	
+	}
+
+}

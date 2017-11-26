@@ -1,0 +1,48 @@
+package Lottery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import com.thoughtworks.selenium.webdriven.commands.Click;
+
+public class Signup {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "/home/aj/Pictures/chromedriver");
+		WebDriver driver = new ChromeDriver();
+		// wd.manage().window().maximize();
+		driver.get("http://lottery1.sia.co.in/");
+		driver.findElement(By.xpath("(//*[@formcontrolname='username'])[1]")).sendKeys("priyanka");
+		driver.findElement(By.xpath("(//*[@formcontrolname='password'])[1]")).sendKeys("123456");
+		driver.findElement(By.xpath("(//*[@class='ui-button-text ui-c'])[4]")).click();
+		Thread.sleep(5000);
+
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+
+		WebElement element = driver.findElement(By.xpath("//*[@id='myModal']/div/div[3]/button[2]"));
+
+		je.executeScript("arguments[0].scrollIntoView(true);", element);
+		driver.findElement(By.cssSelector("#myModal > div > div.ui-g-12.fotter-row > button:nth-child(2)")).click();
+		Thread.sleep(5000);
+
+//		fourd game = new fourd();
+//		game.fgame(driver);
+//
+//		quickbet qdets = new quickbet();
+//		qdets.qbet(driver);
+//
+//		Bolakbalik bba = new Bolakbalik();
+//		bba.bbalik(driver);
+
+		Quick qb=new Quick();
+		qb.quick(driver);
+	        
+	        
+	        
+	}
+
+}

@@ -1,0 +1,38 @@
+package POM;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class reference {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("http://designco.sia.co.in/login");
+	
+		driver.findElement(By.cssSelector("[placeholder='Username']")).sendKeys("superadmin@gmail.com");
+			driver.findElement(By.cssSelector("[placeholder='Password']")).sendKeys("password123");
+		driver.findElement(By.xpath(".//*[@type= 'submit']")).click();
+		
+		//driver.findElement(By.xpath("/html/body/app-root/app-navbar/div[2]/div/div[2]/main/app-dashboard/div[2]/div[1]")).getAttribute("Total Citizens");
+		
+		//driver.findElement(By.cssSelector("")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[class='ui-g-7 ui-lg-7 ui-md-7']")).click();
+		System.out.println("clicked");
+		
+		
+		driver.findElement(By.xpath("body > app-root > app-navbar > div.wrapper > div > div.right-wrap.zeropad.ui-g-11.ui-lg-11.ui-md-11.ui-sm-8 > main > app-dashboard > div.content-section.ui-g-12 > div:nth-child(2)")).click();
+		}
+	}
+
+	
+	
+	

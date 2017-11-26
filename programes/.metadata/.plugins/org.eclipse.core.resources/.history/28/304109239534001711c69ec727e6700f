@@ -1,0 +1,36 @@
+package Loginrun;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import POM.Login;
+
+public class valid {
+private static WebDriver driver;
+	@BeforeTest
+	public void browseropen()
+	{
+		
+		System.setProperty("webdriver.chrome.driver","/home/aj/Downloads/chromedriver"); 
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://designco.sia.co.in/");
+		driver.manage().window().maximize();
+		
+
+	}
+	
+	@Test
+	public void user()
+	{
+		Login.username(driver).sendKeys("superadmin@gmail.com");
+		System.out.println("Enter username successfully");
+		
+		Login.password(driver).sendKeys("password123");
+		System.out.println("Enter password successfully");
+		
+		Login.loginbutton(driver).click();
+		System.out.println("click loginbutton  successfully");
+	}
+}

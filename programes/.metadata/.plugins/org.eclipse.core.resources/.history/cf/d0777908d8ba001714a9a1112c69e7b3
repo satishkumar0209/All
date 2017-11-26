@@ -1,0 +1,31 @@
+package http;
+
+import io.restassured.response.Response;
+import static io.restassured.RestAssured.given;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class status {
+WebDriver driver;
+	public void checkHttpCode(String url) {
+		Response resp = given().get(url).then().extract().response();
+
+		// System.out.println("status code="+resp.getStatusCode());
+		int i = resp.getStatusCode();
+		if (i == 200) {
+			System.out.println("success");
+		} else {
+//			driver.get("http://site24.way2sms.com/content/index.html?");
+//			driver.findElement(By.id("username")).sendKeys("9014316925");
+
+		}
+	}
+
+	public static void main(String[] args) {
+
+		new status().checkHttpCode("http://google.com");
+
+	}
+
+}

@@ -1,0 +1,77 @@
+package phantom;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class second {
+	  private WebDriver driver;
+	  private String baseUrl;
+	  private StringBuffer verificationErrors = new StringBuffer();
+	  protected static DesiredCapabilities dCaps;
+	 
+	  @BeforeTest
+	  public void setUp() throws Exception {
+		  
+		  dCaps = new DesiredCapabilities();
+		  
+		  dCaps.setJavascriptEnabled(true);
+		  dCaps.setCapability("takesScreenshot", false);
+		  
+		  driver = new PhantomJSDriver(dCaps);
+		  baseUrl = "http://www.stuhrling.com/";
+		 
+		  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	  }
+	 
+	  @Test
+	  public void getLinksOfAssertSelenium() throws Exception {
+		
+	    driver.get(baseUrl + "/");
+		WebElement LangSection=driver.findElement(By.cssSelector("#header-large"));
+		List<WebElement> lang=LangSection.findElements(By.tagName("a"));
+
+		for(int i=0; i< lang.size(); i++)
+
+		{
+
+		System.out.println(lang.get(i).getText());
+
+		}
+	    
+	    
+	    
+	    
+	    
+	    /*//Getting all the links present in the page by a HTML tag.
+	    java.util.List  links = driver.findElements(By.tagName("a"));
+	    System.out.println("value===="+links);
+	    
+	    //Printing the size, will print the no of links present in the page.
+	    System.out.println("Total Links present is "+links.size());
+	    
+	    
+	    
+	    
+	    
+	    	List<WebElement> elements = driver.findElements(By.tagName("a")); 
+	    	for (int i = 0; i < elements.size(); i++) {
+	    	   System.out.println(elements.get(i).getAttribute("href"));*/
+	    	}
+	    	
+	    	
+	    }
+	  
+
+	 
+	
+
+
